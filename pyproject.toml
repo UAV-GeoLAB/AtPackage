@@ -1,0 +1,56 @@
+[project]
+name = "atpackage"
+version = "0.1.0"
+description = "A Python package used to interchange photogrammetric blocks"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [
+    { name = "Łukasz Wilk", email = "lukasz.wilk@pw.edu.pl" },
+]
+keywords = [
+    "photogrammetry",
+    "aerial triangulation",
+    "bundle adjustment",
+    "image block",
+    "tie points",
+    "ground control points",
+    "geopackage",
+    "interchange format",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+]
+requires-python = ">=3.12"
+dependencies = [
+    "pandas>=3.1.1",
+    "pandera>=0.36.0",
+    "pyproj>=3.8.0",
+    "scipy>=1.18.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/UAV-GeoLAB/AtPackage"
+Repository = "https://github.com/UAV-GeoLAB/AtPackage"
+Issues = "https://github.com/UAV-GeoLAB/AtPackage/issues"
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "ruff>=0.8",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.7,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
